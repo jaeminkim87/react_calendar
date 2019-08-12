@@ -1,0 +1,52 @@
+#schedule-popup {
+  display: none;
+  position: fixed;
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px #999;
+  z-index: 15;
+  background-color: #ffffff;
+  padding: 30px;
+  box-sizing: border-box;
+  .todo-title-input {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 48px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  #start-date-input {
+    height: 48px;
+    width: 244px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  #end-date-input {
+    height: 48px;
+    width: 244px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  .date-picker-wrap {
+    margin-bottom: 15px;
+    span {
+      padding: 0 17px;
+    }
+  }
+  .btn-wrap {
+    text-align: right;
+    button {
+      cursor: pointer;
+      margin: 0 5px;
+      padding: 5px 15px;
+      background: #ffffff;
+      border: 1px solid #222222;
+      &:hover {
+        background-color: #cccccc;
+      }
+    }
+  }
+}

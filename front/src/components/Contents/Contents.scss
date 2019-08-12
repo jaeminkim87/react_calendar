@@ -1,0 +1,99 @@
+$item-height: 60px;
+
+@mixin start-position($num) {
+  .start-#{$num} {
+    top: $item-height * ($num + 1);
+    left: 0;
+  }
+}
+
+@mixin item-height($num) {
+  .item-#{$num} {
+    height: $item-height * ($num);
+  }
+}
+
+#calendar-body {
+  position: relative;
+
+  .row {
+    display: flex;
+
+    &:first-child {
+      cursor: initial;
+
+      .box {
+        font-weight: bold;
+      }
+
+      .box:hover > span.text {
+        background-color: white;
+      }
+    }
+
+    .box {
+      position: relative;
+      width: calc(100% / 7);
+      font-size: 16px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-right: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+
+      &.sun {
+        color: red;
+      }
+
+      &.sat {
+        color: #588dff;
+      }
+
+      &.grayed {
+        color: gray;
+      }
+
+      div.text {
+        border-radius: 100%;
+      }
+    }
+
+    .todo-item {
+      border: 1px solid #222222;
+      border-radius: 4px;
+      position: absolute;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      z-index: 3;
+      width: 100%;
+      cursor: grab;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    @for $i from 0 to 24 {
+      @include start-position($i);
+      @include item-height($i);
+    }
+  }
+
+  &.month {
+    .row .box {
+      height: 96px;
+      overflow-y: auto;
+      cursor: pointer;
+
+      .month-todo {
+        z-index: 3;
+        color: #222222;
+        cursor: grab;
+      }
+    }
+  }
+
+  &.week {
+    .row .box {
+      height: $item-height;
+    }
+  }
+}
