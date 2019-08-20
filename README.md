@@ -15,9 +15,12 @@ npm install
 npm run start-back-server
 npm run test
 
-4. 실행 (Front, Backend 서버(7000, 8080)와 webpack 빌드 한번 실행)
+4. 실행 (Front, Backend 서버(7777, 8080)와 webpack 빌드 한번 실행)
 npm run start
 ~~~
+
+## 접속
+http://localhost:7777
 
 ## 구조
 

@@ -12,9 +12,7 @@
     "node": true,
     "es6": true
   },
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["react-app", "airbnb"],
   "plugins": [
     "import",
     "react-hooks"
