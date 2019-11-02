@@ -58,9 +58,9 @@ const ContentsContainer = () => {
       endDate = `${moment(e.currentTarget.dataset.startDate + ' ' + time.padStart(2, '0')).add(term, 'hours').format('YYYY-MM-DD HH:00')}`;
       title = `${document.getElementById(e.currentTarget.id).querySelector('.item-title').innerText}`;
     } else {
-      sDate = `${moment(e.currentTarget.dataset.date + ' ' + new Date().getHours() + ":00").format('YYYY-MM-DD HH:00')}`;
-      endDate = `${moment(e.currentTarget.dataset.date + ' ' + new Date().getHours() + ":00").add(1, 'hours').format('YYYY-MM-DD HH:00')}`;
-      title = ``;
+      sDate = `${moment(e.currentTarget.dataset.date + ' ' + new Date().getHours().toString().padStart(2, '0') + ':00').format('YYYY-MM-DD HH:00')}`;
+      endDate = `${moment(e.currentTarget.dataset.date + ' ' + new Date().getHours().toString().padStart(2, '0') + ':00').add(1, 'hours').format('YYYY-MM-DD HH:00')}`;
+      title = '';
     }
     await dispatch(popActions.initPopup(sDate, endDate, title, popType));
     document.getElementById('back').style.display = 'block';

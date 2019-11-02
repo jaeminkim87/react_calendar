@@ -5,7 +5,7 @@
 ~~~
 1. Redis 설치
 brew install redis
-brew start redis
+brew services start redis
 
 2. npm 설치
 cd kakao_pay_frontend_1908

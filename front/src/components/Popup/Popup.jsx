@@ -1,7 +1,7 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import moment from 'moment';
 import './Popup.scss';
-import DatePicker, {registerLocale} from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import parseISO from 'date-fns/parseISO'
 import ko from 'date-fns/locale/ko';
@@ -10,7 +10,7 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import PropTypes from 'prop-types';
 
-const Popup = ({startDate, endDate, title, onSave, onDelete}) => {
+const Popup = ({ startDate, endDate, title, onSave, onDelete }) => {
   const [sDate, setSDate] = useState(startDate);
   const [eDate, setEDate] = useState(endDate);
   const schedulePopup = useRef();
@@ -19,7 +19,7 @@ const Popup = ({startDate, endDate, title, onSave, onDelete}) => {
   useEffect(() => {
     setSDate(startDate);
     setEDate(endDate);
-  },[startDate, endDate]);
+  }, [startDate, endDate]);
 
 
   const handleStartChange = (date) => {
@@ -43,8 +43,8 @@ const Popup = ({startDate, endDate, title, onSave, onDelete}) => {
 
   const handleSave = () => {
     const title = titleInput.current.value.trim();
-    if(title === "") {
-      alert("일정 제목을 넣어주세요.");
+    if (title === '') {
+      alert('일정 제목을 넣어주세요.');
       return false;
     }
 
@@ -62,7 +62,8 @@ const Popup = ({startDate, endDate, title, onSave, onDelete}) => {
   registerLocale('ko', ko);
   return (
     <div id="schedule-popup" ref={schedulePopup}>
-      <input className="todo-title-input" type="text" defaultValue={title} placeholder="일정 제목" ref={titleInput} />
+      <input className="todo-title-input" type="text" defaultValue={title}
+             placeholder="일정 제목" ref={titleInput}/>
       <div className="date-picker-wrap">
         <DatePicker
           id="start-date-input"

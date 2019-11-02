@@ -17,7 +17,7 @@ const Button = ({ type, buttonAction }) => {
     <button
       type="button"
       className={`${type}-btn`}
-      onClick={() => buttonAction}
+      onClick={() => {buttonAction()}}
     >
       {title}
     </button>

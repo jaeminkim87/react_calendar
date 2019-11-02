@@ -70,7 +70,6 @@
   },
   "scripts": {
     "test": "jest",
-    "storybook": "start-storybook",
     "start-back-server": "node ./back/index.js",
     "start-front-server": "node ./front/server.js",
     "build-dev-front": "webpack --config ./front/webpack.dev.config.js",
