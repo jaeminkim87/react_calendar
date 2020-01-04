@@ -7,7 +7,6 @@ brew install redis
 brew services start redis
 
 2. npm 설치
-cd kakao_pay_frontend_1908
 npm install
 
 3. 테스트 (Front, Backend 별도의 스크립트로 구성되어 있음)
